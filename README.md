@@ -24,10 +24,7 @@ sudo insmod CryptoDriver.ko
 Para darle permisos a los dispositivos:
 
 ```bash
-sudo chmod 766 /dev/CryptoDriver0
-sudo chmod 766 /dev/CryptoDriver1
-sudo chmod 766 /dev/CryptoDriver2
-sudo chmod 766 /dev/CryptoDriver3
+sudo chmod 666 /dev/CryptoDriver*
 ```
 
 Para verificar la instalación:
@@ -85,6 +82,7 @@ Cada dispositivo se accede a través de `/dev/CryptoDriver0`, `/dev/CryptoDriver
 - **Manejo de dispositivos:** Implementación con `cdev` y `file_operations`.
 - **Cifrado XOR:** Uso de `get_random_bytes` para la clave.
 - **Hash SHA-256:** Uso de API de `crypto` del kernel.
+  [Documentación de la API de Criptografía en Linux](https://www.kernel.org/doc/html/v4.17/crypto/index.html)
 - **Información de disco:** Obtención de espacio libre mediante `vfs_statfs`.
 
 ---
